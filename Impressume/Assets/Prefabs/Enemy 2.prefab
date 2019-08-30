@@ -123,13 +123,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664aa877c6b14e749823834fe4119599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 10000
   shotCounter: 0
-  minTimeBetweenShots: 0.2
-  maxTimeBetweenShots: 3
+  minTimeBetweenShots: 0.1
+  maxTimeBetweenShots: 1
   projectile: {fileID: 8919249511683602600, guid: 52c388a7342c6d94583adfad5d478fa7,
     type: 3}
-  projectileSpeed: 6
+  projectileSpeed: 9
   deathVFX: {fileID: 54528701897196494, guid: d67ab9aeb0d7fa44d85c6a029ffc40ad, type: 3}
   durationOfExplosion: 0.3
   deathSFX: {fileID: 8300000, guid: 9de4ac22541973f4aaac9b7178c0ad5e, type: 3}
@@ -154,7 +154,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.4, y: 6.4}
+    oldSize: {x: 4.571429, y: 4.571429}
     newSize: {x: 1.04, y: 0.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -193,7 +193,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
