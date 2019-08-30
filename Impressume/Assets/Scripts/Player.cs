@@ -14,6 +14,16 @@ public class Player : MonoBehaviour
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileDelay = 0.1f;
 
+    [Header("Death")]
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float durationOfExplosion = .2f;
+
+    [Header("Sound")]
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] [Range(0, 1)] float deathSoundVolume = 0.75f;  // 3/4 of max. volume
+    [SerializeField] AudioClip shootSound;
+    [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.25f;  // 1/4 of max. volume
+
     Coroutine firingCoroutine;
 
     float xMin, xMax;
@@ -51,11 +61,12 @@ public class Player : MonoBehaviour
     {
         while (true) { 
         GameObject laser = Instantiate(
-               laserPrefab, transform.position, Quaternion.identity
+               laserPrefab, transform.position, Quaternion.Euler(0, 0, 90)
                ) as GameObject;
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+        AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
         yield return new WaitForSeconds(projectileDelay);
-    }
+        }
  }
 
     private void Move()
@@ -81,8 +92,18 @@ public class Player : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, deathSoundVolume);
+        FindObjectOfType<Level>().LoadGameOver();
+        Destroy(gameObject);
+        GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
+        Destroy(explosion, durationOfExplosion);
+
     }
 
 
