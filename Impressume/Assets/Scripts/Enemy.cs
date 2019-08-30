@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] [Range(0, 1)] float deathSoundVolume = 0.75f;  // 3/4 of max. volume
     [SerializeField] AudioClip shootSound;
     [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.25f;  // 1/4 of max. volume
+    [SerializeField] int scoreValue = 150;
 
 
     // Start is called before the first frame update
@@ -54,6 +55,10 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        if (!damageDealer)
+        {
+            return;
+        }
         ProcessHit(damageDealer);
     }
     private void ProcessHit(DamageDealer damageDealer)
@@ -68,6 +73,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSoundVolume);
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
         Destroy(gameObject);
         GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
         Destroy(explosion, durationOfExplosion);
