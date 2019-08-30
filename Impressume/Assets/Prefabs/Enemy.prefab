@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8138606093615157418}
   - component: {fileID: -6151901657340248319}
   - component: {fileID: 2514047031185336745}
+  - component: {fileID: 6640449508446216256}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -135,6 +136,7 @@ MonoBehaviour:
   deathSoundVolume: 0.75
   shootSound: {fileID: 8300000, guid: e3a7671f55533564a8da8f5caf48c1c1, type: 3}
   shootSoundVolume: 1
+  scoreValue: 150
 --- !u!60 &-6151901657340248319
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -197,3 +199,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &6640449508446216256
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726068378833653931}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11578cd36d2cc4d489a0c8036513d624, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

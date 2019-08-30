@@ -26,6 +26,7 @@ public class GameSession : MonoBehaviour
     {
         return score;
     }
+
     public void AddToScore(int scoreValue)
     {
         score += scoreValue;
