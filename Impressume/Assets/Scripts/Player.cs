@@ -120,8 +120,8 @@ public class Player : MonoBehaviour
     private void MoveBoundaries()
     {
         Camera gameCam = Camera.main;
-        xMin = gameCam.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
-        xMax = gameCam.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
+        xMin = gameCam.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + 2f;
+        xMax = gameCam.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - 2f;
         yMin = gameCam.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMax = gameCam.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
     }

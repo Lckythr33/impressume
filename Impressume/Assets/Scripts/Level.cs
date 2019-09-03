@@ -13,8 +13,7 @@ public class Level : MonoBehaviour
     }
 
     public void LoadBossFight()
-    {
-        FindObjectOfType<GameSession>().GetScore();
+    { 
         SceneManager.LoadScene(3);
     }
 
