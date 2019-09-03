@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6151901657340248319}
   - component: {fileID: -8930683935709116426}
   - component: {fileID: 983820706703297605}
-  - component: {fileID: 2913664992437094880}
+  - component: {fileID: -2063562621862813422}
   m_Layer: 9
   m_Name: Enemy 2
   m_TagString: Untagged
@@ -194,7 +194,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2913664992437094880
+--- !u!114 &-2063562621862813422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 726068378833653931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664aa877c6b14e749823834fe4119599, type: 3}
+  m_Script: {fileID: 11500000, guid: 30ce9e4119bb81c4e90540b9d7b647b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5000
@@ -218,5 +218,12 @@ MonoBehaviour:
   deathSFX: {fileID: 8300000, guid: 9de4ac22541973f4aaac9b7178c0ad5e, type: 3}
   deathSoundVolume: 0.75
   shootSound: {fileID: 8300000, guid: e3a7671f55533564a8da8f5caf48c1c1, type: 3}
-  shootSoundVolume: 0.25
-  scoreValue: 100000
+  shootSoundVolume: 0.76
+  scoreValue: 200
+  projectileFiringPeriod: 0.2
+  laserPrefab: {fileID: 0}
+  codeShotPrefab1: {fileID: 0}
+  codeShotPrefab2: {fileID: 0}
+  codeShotPrefab3: {fileID: 0}
+  codeShotPrefab4: {fileID: 0}
+  codeShotPrefab5: {fileID: 0}
