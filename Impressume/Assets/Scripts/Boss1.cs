@@ -59,7 +59,7 @@ public class Boss1 : MonoBehaviour
             transform.position,
             Quaternion.Euler(0, 0, -90)
             ) as GameObject;
-        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-15,15), -projectileSpeed);
         AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
     }
 

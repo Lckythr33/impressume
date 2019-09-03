@@ -48,8 +48,8 @@ public class Enemy : MonoBehaviour
             transform.position,
             Quaternion.Euler(0, 0, -90)
             ) as GameObject;
-        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
-        AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
+       laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+       AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSoundVolume);
         FindObjectOfType<GameSession>().AddToScore(scoreValue);
-        if (FindObjectOfType<GameSession>().GetScore() >= 1000)
+        if (FindObjectOfType<GameSession>().GetScore() >= 5000)
         {
             FindObjectOfType<Level>().LoadBossFight();
         }
