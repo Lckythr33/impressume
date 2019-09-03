@@ -12,6 +12,16 @@ public class Level : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void LoadBossFight()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void LoadResume()
+    {
+        SceneManager.LoadScene(4);
+    }
+
     public void LoadGame()
     {
         FindObjectOfType<GameSession>().ResetGame();

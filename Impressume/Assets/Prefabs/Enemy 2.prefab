@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 726068378833653924}
   - component: {fileID: -6122589015899272251}
   - component: {fileID: 8723894508350025039}
-  - component: {fileID: 8138606093615157418}
   - component: {fileID: -6151901657340248319}
   - component: {fileID: -8930683935709116426}
   - component: {fileID: 983820706703297605}
+  - component: {fileID: 2913664992437094880}
   m_Layer: 9
   m_Name: Enemy 2
   m_TagString: Untagged
@@ -111,32 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 200
---- !u!114 &8138606093615157418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726068378833653931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664aa877c6b14e749823834fe4119599, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10000
-  shotCounter: 0
-  minTimeBetweenShots: 0.1
-  maxTimeBetweenShots: 1
-  projectile: {fileID: 8919249511683602600, guid: 52c388a7342c6d94583adfad5d478fa7,
-    type: 3}
-  projectileSpeed: 9
-  deathVFX: {fileID: 54528701897196494, guid: d67ab9aeb0d7fa44d85c6a029ffc40ad, type: 3}
-  durationOfExplosion: 0.3
-  deathSFX: {fileID: 8300000, guid: 9de4ac22541973f4aaac9b7178c0ad5e, type: 3}
-  deathSoundVolume: 0.75
-  shootSound: {fileID: 8300000, guid: e3a7671f55533564a8da8f5caf48c1c1, type: 3}
-  shootSoundVolume: 1
-  scoreValue: 150
 --- !u!60 &-6151901657340248319
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -162,22 +136,24 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.26, y: -0.42}
+    - - {x: 1.1787295, y: -1.9885712}
       - {x: 0.28, y: -0.41}
-      - {x: 0.52, y: 0.03}
-      - {x: 0.52, y: 0.17999999}
-      - {x: 0.29, y: 0.26}
-      - {x: 0.17999999, y: 0.35999998}
-      - {x: 0.049999997, y: 0.42}
-      - {x: -0.08, y: 0.42}
-      - {x: -0.37, y: 0.22}
-      - {x: -0.52, y: 0.17999999}
-      - {x: -0.52, y: 0.02}
-      - {x: -0.26999998, y: -0.41}
-      - {x: -0.26, y: -0.42}
-      - {x: -0.03, y: -0.42}
-      - {x: 0.03, y: -0.35}
-      - {x: 0.049999997, y: -0.42}
+      - {x: 1.2991538, y: -2.1833594}
+      - {x: 1.5389543, y: -1.7221273}
+      - {x: 1.5198455, y: -1.6037009}
+      - {x: 1.9022241, y: -0.8330051}
+      - {x: 1.4828792, y: 0.54119325}
+      - {x: 0.40177202, y: 1.2309442}
+      - {x: -0.17019796, y: 1.7986054}
+      - {x: -0.640594, y: 1.2381852}
+      - {x: -1.3344526, y: 0.88415194}
+      - {x: -1.9303281, y: -0.26890516}
+      - {x: -1.4387293, y: -0.9478421}
+      - {x: -0.62078786, y: -0.96066856}
+      - {x: -0.310112, y: -1.321094}
+      - {x: -0.14692974, y: -1.9051365}
+      - {x: 0.34737968, y: -2.2523103}
+      - {x: 0.40078783, y: -1.9385105}
 --- !u!50 &-8930683935709116426
 Rigidbody2D:
   serializedVersion: 4
@@ -218,3 +194,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2913664992437094880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726068378833653931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664aa877c6b14e749823834fe4119599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5000
+  shotCounter: 0
+  minTimeBetweenShots: 0.1
+  maxTimeBetweenShots: 1
+  projectile: {fileID: 8919249511683602600, guid: 428cf06a28fc91844b11cd265c60500f,
+    type: 3}
+  projectileSpeed: 10
+  deathVFX: {fileID: 54528701897196494, guid: d67ab9aeb0d7fa44d85c6a029ffc40ad, type: 3}
+  durationOfExplosion: 0.2
+  deathSFX: {fileID: 8300000, guid: 9de4ac22541973f4aaac9b7178c0ad5e, type: 3}
+  deathSoundVolume: 0.75
+  shootSound: {fileID: 8300000, guid: e3a7671f55533564a8da8f5caf48c1c1, type: 3}
+  shootSoundVolume: 0.25
+  scoreValue: 100000
