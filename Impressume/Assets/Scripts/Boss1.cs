@@ -47,6 +47,7 @@ public class Boss1 : MonoBehaviour
         if (shotCounter <= 0f)
         {
             Shotgun();
+            Fire();
             shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
         }
     }
@@ -58,7 +59,23 @@ public class Boss1 : MonoBehaviour
             firePoint.position,
             Quaternion.Euler(0, 0, -90)
             ) as GameObject;
-        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-15, 15), -projectileSpeed);
+        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
+
+        GameObject laser1 = Instantiate(
+           projectile,
+           firePoint.position,
+           Quaternion.Euler(0, 0, -90)
+           ) as GameObject;
+        laser1.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-8,8), -projectileSpeed);
+        AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
+
+        GameObject laser2 = Instantiate(
+           projectile,
+           firePoint.position,
+           Quaternion.Euler(0, 0, -90)
+           ) as GameObject;
+        laser2.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-8, 8), -projectileSpeed);
         AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
     }
 

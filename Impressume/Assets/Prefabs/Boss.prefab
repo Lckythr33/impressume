@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824ce71852db0de49b4ca7dbe8881871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 200
+  damage: 500
 --- !u!60 &8497688611484284550
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
   scoreValue: 150
   shotCounter: 0
   firePoint: {fileID: 4935249515895059307}
-  projectile: {fileID: 8919249511683602600, guid: 428cf06a28fc91844b11cd265c60500f,
+  projectile: {fileID: 8919249511683602600, guid: 8369e1430b41af941a69da7f91ec8701,
     type: 3}
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 2

@@ -31,9 +31,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         MoveBoundaries();
-        
     }
 
 
@@ -77,7 +75,6 @@ public class Player : MonoBehaviour
         var newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);  // Calculate new positions
 
         transform.position = new Vector2(newXPos, newYPos); //apply new positions
-
     }
 
     public int GetHealth()

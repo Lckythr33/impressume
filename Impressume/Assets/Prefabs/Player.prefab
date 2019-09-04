@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6780004008432241097}
   - component: {fileID: 6780004008432241098}
   - component: {fileID: 3712887913542689891}
+  - component: {fileID: 1782060911}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -71,12 +72,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 782d753e2f1a6ff40b65d2b9efafedaf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7eeac23c06ed31445ae21765decae8bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.98, y: 0.75}
+  m_Size: {x: 0.84, y: 0.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -94,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49e5326c30bb884ebe5ab67a2d7d49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 500
   moveSpeed: 16
   padding: 1
   laserPrefab: {fileID: 3566096092962419644, guid: 5dd501c8788f87144b95cec3d59b1b63,
@@ -124,8 +125,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.98, y: 0.75}
-    newSize: {x: 0.98, y: 0.75}
+    oldSize: {x: 2.1, y: 2.1}
+    newSize: {x: 0.84, y: 0.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -145,3 +146,22 @@ PolygonCollider2D:
       - {x: 0.48999998, y: -0.29937458}
       - {x: 0.47717437, y: -0.18781233}
       - {x: 0.12434895, y: 0.19578075}
+--- !u!95 &1782060911
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6780004008432241099}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1adf15aefc94ed74b864f77a534604be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
