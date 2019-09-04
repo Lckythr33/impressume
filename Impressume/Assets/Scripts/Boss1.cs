@@ -5,30 +5,29 @@ using UnityEngine;
 public class Boss1 : MonoBehaviour
 {
     [SerializeField] float health = 100;
-    [SerializeField] float shotCounter;
-    [SerializeField] float minTimeBetweenShots = .2f;
-    [SerializeField] float maxTimeBetweenShots = 3f;
-    [SerializeField] GameObject projectile;
-    [SerializeField] float projectileSpeed = 10f;
     [SerializeField] GameObject deathVFX;
     [SerializeField] float durationOfExplosion = .2f;
     [SerializeField] AudioClip deathSFX;
     [SerializeField] [Range(0, 1)] float deathSoundVolume = 0.75f;  // 3/4 of max. volume
+    [SerializeField] int scoreValue = 150;
+
+    [Header("Projectile")]
+    [SerializeField] float shotCounter;
+    [SerializeField] Transform firePoint;
+    [SerializeField] GameObject projectile;
+    [SerializeField] float minTimeBetweenShots = .2f;
+    [SerializeField] float maxTimeBetweenShots = 3f;
+    [SerializeField] float projectileSpeed = 10f;
     [SerializeField] AudioClip shootSound;
     [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.25f;  // 1/4 of max. volume
-    [SerializeField] int scoreValue = 150;
-    [SerializeField] float projectileFiringPeriod= 0.1f;
 
-    [Header("code shot")]
-    [SerializeField] GameObject laserPrefab;
-    [SerializeField] GameObject codeShotPrefab1;
-    [SerializeField] GameObject codeShotPrefab2;
-    [SerializeField] GameObject codeShotPrefab3;
-    [SerializeField] GameObject codeShotPrefab4;
-    [SerializeField] GameObject codeShotPrefab5;
+    [Header("Shotgun")]
+    [SerializeField] GameObject shellprefab1;
+    [SerializeField] GameObject shellprefab2;
+    [SerializeField] GameObject shellprefab3;
+    [SerializeField] GameObject shellprefab4;
+    [SerializeField] GameObject shellprefab5;
 
-
-    Coroutine codeShotCoroutine;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +46,7 @@ public class Boss1 : MonoBehaviour
         shotCounter -= Time.deltaTime;
         if (shotCounter <= 0f)
         {
-            Fire();
+            Shotgun();
             shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
         }
     }
@@ -56,34 +55,30 @@ public class Boss1 : MonoBehaviour
     {
         GameObject laser = Instantiate(
             projectile,
-            transform.position,
+            firePoint.position,
             Quaternion.Euler(0, 0, -90)
             ) as GameObject;
-        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-15,15), -projectileSpeed);
+        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-15, 15), -projectileSpeed);
         AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
     }
 
-    IEnumerator fireCodeShot()
+    public void Shotgun()
     {
-        while (true)
-        {
-            GameObject codeShot1 = Instantiate(codeShotPrefab1, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
-            codeShot1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
-            yield return new WaitForSeconds(.5f);
-            GameObject codeShot2 = Instantiate(codeShotPrefab2, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
-            codeShot2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
-            yield return new WaitForSeconds(.5f);
-            GameObject codeShot3 = Instantiate(codeShotPrefab3, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
-            codeShot3.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
-            yield return new WaitForSeconds(.5f);
-            GameObject codeShot4 = Instantiate(codeShotPrefab4, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
-            codeShot4.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
-            yield return new WaitForSeconds(.5f);
-            GameObject codeShot5 = Instantiate(codeShotPrefab5, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
-            codeShot5.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
-            yield return new WaitForSeconds(1);
-            yield return new WaitForSeconds(projectileFiringPeriod);
-        }
+            GameObject shell1 = Instantiate(shellprefab1, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
+            shell1.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-10,10), -Random.Range(5,18));
+            
+            GameObject shell2 = Instantiate(shellprefab2, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
+            shell2.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-3, 3), Random.Range(-5, 18));
+           
+            GameObject shell3 = Instantiate(shellprefab3, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
+            shell3.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-5, 5), -Random.Range(5, 18));
+           
+            GameObject shell4 = Instantiate(shellprefab4, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
+            shell4.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-7, 7), Random.Range(-5, 18));
+       
+            GameObject shell5 = Instantiate(shellprefab5, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
+            shell5.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-15, 15), -Random.Range(5, 18));
+           
     }
 
     private void OnTriggerEnter2D(Collider2D other)
