@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip shootSound;
     [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.25f;  // 1/4 of max. volume
 
+    float powerUpCounter;
+    float changeSpeed;
+
     Coroutine firingCoroutine;
 
     float xMin, xMax;
@@ -40,6 +43,18 @@ public class Player : MonoBehaviour
     {
         Move();
         Fire();
+
+        if(powerUpCounter > 0)
+        {
+            powerUpCounter -= Time.deltaTime;
+            if(powerUpCounter <= 0)
+            {
+                moveSpeed -= changeSpeed;
+                Debug.Log("Powerup deactivated");
+                Debug.Log(GetSpeed());
+            }
+        }
+ 
     }
 
 
@@ -82,6 +97,25 @@ public class Player : MonoBehaviour
         return health;
     }
 
+    public float GetSpeed()
+    {
+        return moveSpeed;
+    }
+
+    public void AddHealth(int healthUp)
+    {
+        this.health = health + healthUp;
+    }
+
+    public void speedUp(int speed, float timer)
+    {
+        Debug.Log(GetSpeed());
+        Debug.Log("Powerup Activated");
+        moveSpeed += speed;
+        Debug.Log(GetSpeed());
+        powerUpCounter = timer;
+        changeSpeed = speed;
+     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
