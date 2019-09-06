@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSoundVolume);
         FindObjectOfType<GameSession>().AddToScore(scoreValue);
-        if (FindObjectOfType<GameSession>().GetScore() >= 1000)
+        if (FindObjectOfType<GameSession>().GetScore() >= 5000)
         {
             FindObjectOfType<Level>().LoadBossFight();
         }

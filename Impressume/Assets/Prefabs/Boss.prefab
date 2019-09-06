@@ -249,7 +249,7 @@ MonoBehaviour:
     type: 3}
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 2
-  projectileSpeed: 10
+  projectileSpeed: 8
   shootSound: {fileID: 8300000, guid: e3a7671f55533564a8da8f5caf48c1c1, type: 3}
   shootSoundVolume: 0.76
   shellprefab1: {fileID: 8919249511683602600, guid: 428cf06a28fc91844b11cd265c60500f,

@@ -82,19 +82,19 @@ public class Boss1 : MonoBehaviour
     public void Shotgun()
     {
             GameObject shell1 = Instantiate(shellprefab1, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
-            shell1.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-10,10), -Random.Range(5,18));
+            shell1.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-10,10), -Random.Range(5,10));
             
             GameObject shell2 = Instantiate(shellprefab2, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
-            shell2.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-3, 3), Random.Range(-5, 18));
+            shell2.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-3, 3), Random.Range(-5, 10));
            
             GameObject shell3 = Instantiate(shellprefab3, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
-            shell3.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-5, 5), -Random.Range(5, 18));
+            shell3.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-5, 5), -Random.Range(5, 10));
            
             GameObject shell4 = Instantiate(shellprefab4, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
-            shell4.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-7, 7), Random.Range(-5, 18));
+            shell4.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-7, 7), Random.Range(-5, 8));
        
             GameObject shell5 = Instantiate(shellprefab5, transform.position, Quaternion.Euler(0, 0, 90)) as GameObject;
-            shell5.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-15, 15), -Random.Range(5, 18));
+            shell5.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-15, 15), -Random.Range(5, 8));
            
     }
 
