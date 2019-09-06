@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5937090117795173094}
   - component: {fileID: 528098822688776874}
   - component: {fileID: 7575021354183913759}
+  - component: {fileID: -3763162616203583545}
   m_Layer: 13
   m_Name: speedUp
   m_TagString: Untagged
@@ -124,7 +125,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.1
+  m_GravityScale: 0.3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -144,3 +145,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpCounter: 2
   incVal: 10
+--- !u!114 &-3763162616203583545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7534580005351140641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9550921f90d19bc4789935dbd891e324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

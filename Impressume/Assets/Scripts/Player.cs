@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Z.M.
 public class Player : MonoBehaviour
 {
     [Header("Player")]
@@ -47,11 +47,13 @@ public class Player : MonoBehaviour
         if(powerUpCounter > 0)
         {
             powerUpCounter -= Time.deltaTime;
+
+            
             if(powerUpCounter <= 0)
             {
                 moveSpeed -= changeSpeed;
                 Debug.Log("Powerup deactivated");
-                Debug.Log(GetSpeed());
+                Debug.Log(GetSpeed()); //Z
             }
         }
  
@@ -104,7 +106,7 @@ public class Player : MonoBehaviour
 
     public void AddHealth(int healthUp)
     {
-        this.health = health + healthUp;
+        this.health = health + healthUp;  //Z
     }
 
     public void speedUp(int speed, float timer)
@@ -114,7 +116,7 @@ public class Player : MonoBehaviour
         moveSpeed += speed;
         Debug.Log(GetSpeed());
         powerUpCounter = timer;
-        changeSpeed = speed;
+        changeSpeed = speed;                      //Z
      }
 
     private void OnTriggerEnter2D(Collider2D other)
